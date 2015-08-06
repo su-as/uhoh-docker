@@ -29,7 +29,7 @@ RUN apt-get install -y mongodb-org
 RUN mkdir -p /data/db
 
 #end install mongodb
-
+ 
 ### GET AN SSH Daemon up and running
 RUN apt-get install -y ssh
 RUN mkdir /var/run/sshd
@@ -47,11 +47,14 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 ### END SSH Daemo
 
 RUN mkdir -p /opt/uhoh
-RUN cd /opt/uhoh && npm install express
+WORKDIR /opt/uhoh
+RUN npm install http mongodb express body-parser assert path jade
+RUN wget https://github.com/su-as/uhoh-services/archive/0.2.tar.gz -O uhoh.tar.gz
+RUN tar --strip-components=1 -xvzf uhoh.tar.gz
 
 #EXPOSE 27017
 #ENTRYPOINT ["/usr/bin/mongod"]
 
 #mongodb is 27017 / ssh 22
-EXPOSE 22 27017
+EXPOSE 22 27017 3000
 CMD ["/usr/bin/supervisord"]
