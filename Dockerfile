@@ -36,4 +36,4 @@ RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN npm install -g node-inspector
 
 EXPOSE 22 3000 3030 5859
-CMD ["/usr/bin/supervisord"]
+CMD ["/usr/bin/node /opt/uhoh/index.js"]
