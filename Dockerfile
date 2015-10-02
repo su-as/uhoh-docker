@@ -28,7 +28,7 @@ WORKDIR /opt/uhoh
 RUN npm install http https mongodb express body-parser assert path jade passport passport-saml
 
 
-RUN wget https://github.com/su-as/uhoh-services/archive/0.4.tar.gz -O uhoh.tar.gz
+RUN wget https://github.com/su-as/uhoh-services/archive/0.5.tar.gz -O uhoh.tar.gz
 RUN tar --strip-components=1 -xvzf uhoh.tar.gz
 
 
