@@ -26,4 +26,4 @@ RUN tar --strip-components=1 -xvzf uhoh.tar.gz
 RUN npm install -g node-inspector
 
 EXPOSE 22 3000 3030 5859
-CMD ["/usr/bin/node /opt/uhoh/index.js"]
+CMD ["/usr/bin/node", "/opt/uhoh/index.js"]
