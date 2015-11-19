@@ -33,7 +33,12 @@ RUN npm install http \
 		errorhandler \
 		mongoose \
 		winston \
-		nodemailer
+		nodemailer \
+		util \
+		socket.io \
+		url \
+		fs \
+		express-session
 
 #download and install the latest release of uhoh
 RUN wget -qO- https://api.github.com/repos/su-as/uhoh-services/releases \
