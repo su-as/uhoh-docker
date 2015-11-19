@@ -9,12 +9,11 @@ MAINTAINER Steve Kallestad
 RUN export LC_ALL=C
 RUN mkdir -p /opt/uhoh
 
-
-RUN apt-get -y update #get the latest package list
+#get the latest package list
+RUN apt-get -y update 
 
 #install nodejs and related packages
 RUN apt-get install -y nodejs npm wget
-
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 #install the necessary node.js libraries
